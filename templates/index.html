@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mohith Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="{{ url_for('static', filename='projects/gojo.jpg') }}" type="image/png">
+</head>
+<body>
+
+<!-- Dark Mode Toggle -->
+<button id="darkModeToggle" class="dark-toggle">🌙</button>
+
+<!-- Hero Section -->
+<header class="hero" id="home">
+    <canvas id="heroParticles"></canvas>
+    <div class="hero-content">
+        <div class="hero-text">
+            <h1>Hi, I’m Mohith 👋</h1>
+            <p class="tagline">Building Interactive Web Apps & AI Tools</p>
+            <a href="#projects" class="btn">See My Work</a>
+        </div>
+        <div class="hero-image">
+            <img src="{{ url_for('static', filename='projects/gojo.jpg') }}" alt="Mohith">
+        </div>
+    </div>
+</header>
+
+<!-- About Section -->
+<section id="about" class="fade-in">
+    <h2>About Me</h2>
+    <p>I love building modern websites and working with Python projects.</p>
+    <h3>Skills</h3>
+    <div class="skills">
+        <span class="skill">HTML</span>
+        <span class="skill">CSS</span>
+        <span class="skill">JavaScript</span>
+        <span class="skill">Python</span>
+        <span class="skill">Flask</span>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="fade-in">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+
+        <!-- Project 1: AI Chatbot -->
+        <div class="project-card">
+            <img src="{{ url_for('static', filename='projects/chatbot2.jpeg') }}" alt="AI Chatbot Project">
+            <h3>AI Chatbot</h3>
+            <p>A modern AI chatbot built with Python</p>
+            <div class="tech-tags">
+                <span>Python</span><span>AI</span>
+            </div>
+            <a href="https://mohith-r2.github.io/AI-chatbot2025/" target="_blank" class="btn">View Code</a>
+        </div>
+
+        <!-- Project 2: Traveler Website -->
+        <div class="project-card">
+            <img src="{{ url_for('static', filename='projects/traveler.jpg') }}" alt="Traveler Website Project">
+            <h3>Traveler Website</h3>
+            <p>A frontend traveler website</p>
+            <div class="tech-tags">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
+            <a href="https://mohith-r2.github.io/traveler-website/" target="_blank" class="btn">View Code</a>
+        </div>
+
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="fade-in">
+    <h2>Contact Me</h2>
+
+    <div id="flash-container"></div>
+
+    <form id="contactForm">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+    </form>
+
+    <div class="social-links">
+        <a href="https://github.com/MOHITH-R2" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/MOHITH-R2" target="_blank">LinkedIn</a>
+        <a href="https://twitter.com/" target="_blank">Twitter</a>
+    </div>
+</section>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+<script>
+    // Initialize particles in hero
+    particlesJS("heroParticles", {
+        "particles": {
+            "number": {"value": 60},
+            "size": {"value": 3},
+            "color": {"value": "#5BC0EB"},
+            "move": {"speed": 2},
+            "line_linked": {"enable": true, "distance": 120, "color": "#5BC0EB"}
+        }
+    });
+</script>
+</body>
+</html>
